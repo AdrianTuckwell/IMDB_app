@@ -19766,6 +19766,10 @@
 	    return { data: sampleData };
 	  },
 	
+	  getShowTimes: function getShowTimes() {
+	    console.log("button pressed");
+	  },
+	
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -19775,7 +19779,19 @@
 	        null,
 	        ' UK Opening Week '
 	      ),
-	      React.createElement(MovieList, { data: this.state.data })
+	      React.createElement(MovieList, { data: this.state.data }),
+	      React.createElement(
+	        'a',
+	        { href: 'url' },
+	        'see more opeing this week'
+	      ),
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      React.createElement(
+	        'button',
+	        { onClick: this.getShowTimes },
+	        'Get Show Times'
+	      )
 	    );
 	  }
 	

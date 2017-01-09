@@ -16,11 +16,19 @@ var MovieBox = React.createClass({
     return {data:sampleData}
   },
 
+  getShowTimes: function(){
+    console.log("button pressed");
+  },
+
   render:function (){
     return (
       <div className='movie-box'>
         <h2> UK Opening Week </h2>
         <MovieList data={this.state.data}/>
+        <a href="url">see more opeing this week</a>
+        <br/>
+        <br/>
+        <button onClick={this.getShowTimes}>Get Show Times</button>
       </div>
       )
   },
