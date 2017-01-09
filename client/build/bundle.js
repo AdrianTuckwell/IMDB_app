@@ -48,13 +48,10 @@
 	
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
+	var MovieBox = __webpack_require__(159);
 	
 	window.onload = function () {
-	  ReactDOM.render(React.createElement(
-	    'h1',
-	    null,
-	    ' App Started '
-	  ), document.getElementById('app'));
+	  ReactDOM.render(React.createElement(MovieBox, null), document.getElementById('app'));
 	};
 
 /***/ },
@@ -19750,6 +19747,101 @@
 	
 	module.exports = __webpack_require__(3);
 
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var MovieList = __webpack_require__(160);
+	
+	var sampleData = [{ id: 1, name: 'Sausage Party' }, { id: 2, name: 'Cafe Society' }, { id: 3, name: 'Morgan' }, { id: 4, name: 'The 9th life of Louis Drax' }, { id: 5, name: 'Naam Hai Akira' }, { id: 6, name: 'Equity' }, { id: 7, name: 'Things to come' }];
+	
+	var MovieBox = React.createClass({
+	  displayName: 'MovieBox',
+	
+	  getInitialState: function getInitialState() {
+	    return { data: sampleData };
+	  },
+	
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'movie-box' },
+	      React.createElement(
+	        'h2',
+	        null,
+	        ' UK Opening Week '
+	      ),
+	      React.createElement(MovieList, { data: this.state.data })
+	    );
+	  }
+	
+	});
+	
+	module.exports = MovieBox;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var Movie = __webpack_require__(161);
+	
+	var MovieList = React.createClass({
+	  displayName: 'MovieList',
+	
+	  render: function render() {
+	
+	    var movies = this.props.data.map(function (movie) {
+	      return React.createElement(Movie, { name: movie.name, key: movie.id });
+	    });
+	
+	    // Displaying the contents of the Array 
+	    return React.createElement(
+	      'div',
+	      { className: 'movie-list' },
+	      movies
+	    );
+	  }
+	});
+	
+	module.exports = MovieList;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var Movie = React.createClass({
+	  displayName: 'Movie',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'movie' },
+	      React.createElement(
+	        'h4',
+	        { className: 'movie-name' },
+	        this.props.name
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        this.props.children
+	      )
+	    );
+	  }
+	
+	});
+	
+	module.exports = Movie;
 
 /***/ }
 /******/ ]);
