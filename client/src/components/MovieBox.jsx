@@ -1,6 +1,7 @@
 var React = require('react');
 var MovieList = require('./MovieList.jsx');
 
+// create some Movie data --------------------
 var sampleData = [
   {id:1, name: 'Sausage Party'},
   {id:2, name: 'Cafe Society'},
@@ -30,7 +31,7 @@ var MovieBox = React.createClass({
         <br/>
         <button onClick={this.getShowTimes} className="tab">Get Show Times</button>
       </div>
-      )
+    )
   },
 
 });

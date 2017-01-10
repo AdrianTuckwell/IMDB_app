@@ -19757,6 +19757,7 @@
 	var React = __webpack_require__(1);
 	var MovieList = __webpack_require__(160);
 	
+	// create some Movie data --------------------
 	var sampleData = [{ id: 1, name: 'Sausage Party' }, { id: 2, name: 'Cafe Society' }, { id: 3, name: 'Morgan' }, { id: 4, name: 'The 9th life of Louis Drax' }, { id: 5, name: 'Naam Hai Akira' }, { id: 6, name: 'Equity' }, { id: 7, name: 'Things to come' }];
 	
 	var MovieBox = React.createClass({
@@ -19821,7 +19822,9 @@
 	    return React.createElement(
 	      'div',
 	      { className: 'movie-list' },
-	      movies
+	      ' ',
+	      movies,
+	      ' '
 	    );
 	  }
 	});
@@ -19838,6 +19841,7 @@
 	var Movie = React.createClass({
 	  displayName: 'Movie',
 	
+	
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -19845,7 +19849,9 @@
 	      React.createElement(
 	        'a',
 	        { className: 'movie-name' },
-	        this.props.name
+	        ' ',
+	        this.props.name,
+	        ' '
 	      ),
 	      React.createElement(
 	        'p',
