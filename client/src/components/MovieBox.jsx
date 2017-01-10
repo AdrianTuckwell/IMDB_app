@@ -25,10 +25,10 @@ var MovieBox = React.createClass({
       <div className='movie-box'>
         <h2> UK Opening Week </h2>
         <MovieList data={this.state.data}/>
-        <a href="url">see more opeing this week</a>
+        <a href="url" className="tab">see more opening this week</a>
         <br/>
         <br/>
-        <button onClick={this.getShowTimes}>Get Show Times</button>
+        <button onClick={this.getShowTimes} className="tab">Get Show Times</button>
       </div>
       )
   },

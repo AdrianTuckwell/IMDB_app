@@ -19782,14 +19782,14 @@
 	      React.createElement(MovieList, { data: this.state.data }),
 	      React.createElement(
 	        'a',
-	        { href: 'url' },
-	        'see more opeing this week'
+	        { href: 'url', className: 'tab' },
+	        'see more opening this week'
 	      ),
 	      React.createElement('br', null),
 	      React.createElement('br', null),
 	      React.createElement(
 	        'button',
-	        { onClick: this.getShowTimes },
+	        { onClick: this.getShowTimes, className: 'tab' },
 	        'Get Show Times'
 	      )
 	    );
@@ -19843,7 +19843,7 @@
 	      'div',
 	      { className: 'movie' },
 	      React.createElement(
-	        'h4',
+	        'a',
 	        { className: 'movie-name' },
 	        this.props.name
 	      ),
